@@ -15,11 +15,11 @@ public class Booking {
     private double totalFare;
     private String status;
 
-    // Default constructor
+    
     public Booking() {
     }
 
-    // Parameterized constructor
+    
     public Booking(Long userId, Long routeId, String seatNumbers, String bookingDate, double totalFare, String status) {
         this.userId = userId;
         this.routeId = routeId;
@@ -29,7 +29,7 @@ public class Booking {
         this.status = status;
     }
 
-    // Getters and setters
+    
     public Long getBookingId() {
         return bookingId;
     }

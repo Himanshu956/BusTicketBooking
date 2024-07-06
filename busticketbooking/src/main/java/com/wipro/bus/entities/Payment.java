@@ -21,12 +21,12 @@ public class Payment {
 //    @JoinColumn(name = "bookingId")
 //    private Booking booking;
 
-    // Default constructor
+    
     public Payment() {
     }
     
 
-    // Parameterized constructor
+    
     public Payment(Long bookingId, String paymentMode, double paymentAmount, String paymentStatus, Date paymentDate) {
         this.bookingId = bookingId;
         this.paymentMode = paymentMode;
@@ -35,7 +35,7 @@ public class Payment {
         this.paymentDate = paymentDate;
     }
 
-    // Getters and setters
+    
     public Long getPaymentId() {
         return paymentId;
     }

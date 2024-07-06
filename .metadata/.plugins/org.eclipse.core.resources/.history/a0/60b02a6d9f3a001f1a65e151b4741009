@@ -1,0 +1,40 @@
+package com.wipro.bus.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.wipro.bus.entities.Payment;
+
+public class PaymentServiceImpl implements PaymentService {
+
+	@Override
+	public Payment savePayment(Payment payment) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Payment> getPaymentById(Long paymentId) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public List<Payment> getAllPayments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Payment updatePayment(Long paymentId, Payment paymentDetails) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deletePayment(Long paymentId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -12,19 +12,19 @@ public class Administrator {
     private String email;
     private String password;
 
-    // Default constructor
+    
     public Administrator() {
     }
 
     
-    // Parameterized constructor
+    
     public Administrator(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    // Getters and setters
+    
     public Long getAdminId() {
         return adminId;
     }

@@ -1,0 +1,5 @@
+package com.wipro.bus.service;
+
+public interface PaymentService {
+
+}

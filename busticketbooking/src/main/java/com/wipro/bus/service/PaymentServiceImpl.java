@@ -1,0 +1,69 @@
+package com.wipro.bus.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wipro.bus.entities.Payment;
+import com.wipro.bus.repository.PaymentRepository;
+
+
+@Service
+public class PaymentServiceImpl implements PaymentService {
+
+	
+	@Autowired
+	private PaymentRepository paymentRepository;
+	
+	
+	
+	@Override
+	public Payment savePayment(Payment payment) {
+		// TODO Auto-generated method stub
+		return paymentRepository.save(payment);
+	}
+
+	@Override
+	public Optional<Payment> getPaymentById(Long paymentId) {
+		// TODO Auto-generated method stub
+		return paymentRepository.findById(paymentId);
+	}
+
+	@Override
+	public List<Payment> getAllPayments() {
+		// TODO Auto-generated method stub
+		return paymentRepository.findAll();
+	}
+
+	@Override
+	public Payment updatePayment(Long paymentId, Payment paymentDetails) {
+
+		Payment payment=paymentRepository.findById(paymentId).orElseThrow(() -> new RuntimeException("payment not found"));
+		
+		payment.setBookingId(paymentDetails.getBookingId());
+		payment.setPaymentMode(paymentDetails.getPaymentMode());
+		payment.setPaymentAmount(paymentDetails.getPaymentAmount());
+		payment.setPaymentStatus(paymentDetails.getPaymentStatus());
+		payment.setPaymentStatus(paymentDetails.getPaymentStatus());
+		payment.setPaymentDate(paymentDetails.getPaymentDate());
+		
+		
+		return paymentRepository.save(payment);
+	}
+
+	
+	
+	@Override
+	public void deletePayment(Long paymentId) {
+		
+		Payment payment = paymentRepository.findById(paymentId).orElseThrow(()-> new RuntimeException("Payment not found"));
+		
+		paymentRepository.delete(payment);
+
+		
+		
+	}
+
+}

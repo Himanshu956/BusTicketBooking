@@ -21,11 +21,11 @@ public class User {
 //    @OneToMany(mappedBy = "user")
 //    private List<Booking> bookings;
 
-    // Default constructor
+    
     public User() {
     }
 
-    // Parameterized constructor
+   
     public User(String name, String email, String password, String phoneNumber, String address) {
         this.name = name;
         this.email = email;
@@ -35,7 +35,7 @@ public class User {
     }
     
 
-    // Getters and setters
+   
     public Long getUserId() {
         return userId;
     }

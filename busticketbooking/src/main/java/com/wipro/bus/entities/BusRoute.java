@@ -18,11 +18,11 @@ public class BusRoute {
     private double fare;
     private String amenities;
 
-    // Default constructor
+    
     public BusRoute() {
     }
 
-    // Parameterized constructor
+
     public BusRoute(String busName, String busNumber, String busType, int numOfSeats, String origin, String destination, String timings, double fare, String amenities) {
         this.busName = busName;
         this.busNumber = busNumber;
@@ -35,7 +35,7 @@ public class BusRoute {
         this.amenities = amenities;
     }
 
-    // Getters and setters
+    
     public Long getRouteId() {
         return routeId;
     }

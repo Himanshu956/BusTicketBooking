@@ -16,7 +16,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
 @Service
-
 public class UserServiceImpl implements UserService {
 
 	@Autowired
