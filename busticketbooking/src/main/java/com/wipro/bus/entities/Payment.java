@@ -10,32 +10,34 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long paymentId;
-    private Long bookingId;
-    private String paymentMode;
+
+  
+    
+    
+    private String paymentMethod;
     private double paymentAmount;
     private String paymentStatus;
     private Date paymentDate;
     
     
-//    @OneToOne
-//    @JoinColumn(name = "bookingId")
-//    private Booking booking;
+    @OneToOne
+    @JoinColumn(name = "booking_id") 
+    private Booking booking;
 
-    // Default constructor
+   
     public Payment() {
     }
-    
 
-    // Parameterized constructor
-    public Payment(Long bookingId, String paymentMode, double paymentAmount, String paymentStatus, Date paymentDate) {
-        this.bookingId = bookingId;
-        this.paymentMode = paymentMode;
+    
+    public Payment(Booking booking, String paymentMethod, double paymentAmount, String paymentStatus, Date paymentDate) {
+        this.booking = booking;
+        this.paymentMethod = paymentMethod;
         this.paymentAmount = paymentAmount;
         this.paymentStatus = paymentStatus;
         this.paymentDate = paymentDate;
     }
 
-    // Getters and setters
+    
     public Long getPaymentId() {
         return paymentId;
     }
@@ -44,20 +46,13 @@ public class Payment {
         this.paymentId = paymentId;
     }
 
-    public Long getBookingId() {
-        return bookingId;
+   
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setBookingId(Long bookingId) {
-        this.bookingId = bookingId;
-    }
-
-    public String getPaymentMode() {
-        return paymentMode;
-    }
-
-    public void setPaymentMode(String paymentMode) {
-        this.paymentMode = paymentMode;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public double getPaymentAmount() {
@@ -82,5 +77,13 @@ public class Payment {
 
     public void setPaymentDate(Date paymentDate) {
         this.paymentDate = paymentDate;
+    }
+
+    public Booking getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
     }
 }

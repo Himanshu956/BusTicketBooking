@@ -1,3 +1,4 @@
+
 package com.wipro.bus.entities;
 
 import jakarta.persistence.*;
@@ -8,28 +9,32 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingId;
-    private Long userId;
-    private Long routeId;
+    
+    private Long scheduleId;
     private String seatNumbers;
     private String bookingDate;
-    private double totalFare;
-    private String status;
+//    private double totalFare;
+//    private String status;
 
-    // Default constructor
+    @ManyToOne
+    @JoinColumn(name = "user_id") 
+    private User user;
+
+   
     public Booking() {
     }
 
     // Parameterized constructor
-    public Booking(Long userId, Long routeId, String seatNumbers, String bookingDate, double totalFare, String status) {
-        this.userId = userId;
-        this.routeId = routeId;
+    public Booking(User user, Long scheduleId, String seatNumbers, String bookingDate) { //removed double totalFare, String status
+        this.user = user; 
+        this.scheduleId = scheduleId;
         this.seatNumbers = seatNumbers;
         this.bookingDate = bookingDate;
-        this.totalFare = totalFare;
-        this.status = status;
+//        this.totalFare = totalFare;
+//        this.status = status;
     }
 
-    // Getters and setters
+   
     public Long getBookingId() {
         return bookingId;
     }
@@ -38,20 +43,12 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getScheduleId() {
+        return scheduleId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getRouteId() {
-        return routeId;
-    }
-
-    public void setRouteId(Long routeId) {
-        this.routeId = routeId;
+    public void setScheduleId(Long scheduleId) {
+        this.scheduleId = scheduleId;
     }
 
     public String getSeatNumbers() {
@@ -70,19 +67,27 @@ public class Booking {
         this.bookingDate = bookingDate;
     }
 
-    public double getTotalFare() {
-        return totalFare;
+//    public double getTotalFare() {
+//        return totalFare;
+//    }
+//
+//    public void setTotalFare(double totalFare) {
+//        this.totalFare = totalFare;
+//    }
+//
+//    public String getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(String status) {
+//        this.status = status;
+//    }
+
+    public User getUser() {
+        return user;
     }
 
-    public void setTotalFare(double totalFare) {
-        this.totalFare = totalFare;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

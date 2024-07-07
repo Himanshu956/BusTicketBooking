@@ -2,6 +2,7 @@ package com.wipro.bus.service;
 
 import com.wipro.bus.entities.User;
 import com.wipro.bus.entities.Booking;
+
 import java.util.List;
 
 public interface UserService {
@@ -10,5 +11,5 @@ public interface UserService {
     User updateProfile(User user);
     List<Booking> viewBookingHistory(Long userId);
     boolean cancelBooking(Long bookingId);
-    boolean deleteUser(String email);
+    boolean deleteUserByEmail(String email);
 }

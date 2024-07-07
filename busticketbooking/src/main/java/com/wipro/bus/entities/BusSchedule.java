@@ -1,47 +1,49 @@
 package com.wipro.bus.entities;
 
+import java.util.Date;
+
 import jakarta.persistence.*;
 
 @Entity
-public class BusRoute {
+public class BusSchedule {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long routeId;
+    private Long scheduleId;
     private String busName;
     private String busNumber;
     private String busType;
     private int numOfSeats;
     private String origin;
     private String destination;
+//    private Date scheduleDate;
     private String timings;
     private double fare;
-    private String amenities;
 
     // Default constructor
-    public BusRoute() {
+    public BusSchedule() {
     }
 
     // Parameterized constructor
-    public BusRoute(String busName, String busNumber, String busType, int numOfSeats, String origin, String destination, String timings, double fare, String amenities) {
+    public BusSchedule(String busName, String busNumber, String busType, int numOfSeats, String origin, String destination, String timings) {
         this.busName = busName;
         this.busNumber = busNumber;
         this.busType = busType;
         this.numOfSeats = numOfSeats;
         this.origin = origin;
         this.destination = destination;
+//        this.scheduleDate = scheduleDate;
         this.timings = timings;
-        this.fare = fare;
-        this.amenities = amenities;
+        
     }
 
-    // Getters and setters
-    public Long getRouteId() {
-        return routeId;
+    
+    public Long getScheduleId() {
+        return scheduleId;
     }
 
-    public void setRouteId(Long routeId) {
-        this.routeId = routeId;
+    public void setScheduleId(Long scheduleId) {
+        this.scheduleId = scheduleId;
     }
 
     public String getBusName() {
@@ -92,7 +94,15 @@ public class BusRoute {
         this.destination = destination;
     }
 
-    public String getTimings() {
+//    public Date getScheduleDate() {
+//		return scheduleDate;
+//	}
+//
+//	public void setScheduleDate(Date scheduleDate) {
+//		this.scheduleDate = scheduleDate;
+//	}
+
+	public String getTimings() {
         return timings;
     }
 
@@ -108,11 +118,4 @@ public class BusRoute {
         this.fare = fare;
     }
 
-    public String getAmenities() {
-        return amenities;
-    }
-
-    public void setAmenities(String amenities) {
-        this.amenities = amenities;
-    }
 }

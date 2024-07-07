@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Positive;
 
-public class BusRouteDTO {
+public class BusScheduleDTO {
 
     private Long routeId;
 
@@ -35,14 +35,13 @@ public class BusRouteDTO {
     @Positive(message = "Fare must be positive")
     private double fare;
 
-    private String amenities;
 
-    // Default constructor
-    public BusRouteDTO() {
+    
+    public BusScheduleDTO() {
     }
 
-    // Parameterized constructor
-    public BusRouteDTO(String busName, String busNumber, String busType, int numOfSeats, String origin, String destination, String timings, double fare, String amenities) {
+    
+    public BusScheduleDTO(String busName, String busNumber, String busType, int numOfSeats, String origin, String destination, String timings, double fare) {
         this.busName = busName;
         this.busNumber = busNumber;
         this.busType = busType;
@@ -51,10 +50,9 @@ public class BusRouteDTO {
         this.destination = destination;
         this.timings = timings;
         this.fare = fare;
-        this.amenities = amenities;
     }
 
-    // Getters and setters
+    
     public Long getRouteId() {
         return routeId;
     }
@@ -126,12 +124,5 @@ public class BusRouteDTO {
     public void setFare(double fare) {
         this.fare = fare;
     }
-
-    public String getAmenities() {
-        return amenities;
-    }
-
-    public void setAmenities(String amenities) {
-        this.amenities = amenities;
-    }
+    
 }

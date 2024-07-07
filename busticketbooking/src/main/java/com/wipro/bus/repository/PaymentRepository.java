@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.wipro.bus.entities.Payment;
 
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
-    // Custom query methods (if any) can be added here
+  
 }
