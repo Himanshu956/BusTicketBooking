@@ -19,6 +19,5 @@ public interface BookingService {
 
     List<Booking> getBookingsByUserId(Long userId);
 
-    // Add this method
     Booking bookTicket(BookingDTO bookingDTO);
 }

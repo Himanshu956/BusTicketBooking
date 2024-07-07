@@ -14,6 +14,6 @@ public interface BusScheduleService {
     Optional<BusSchedule> getBusScheduleById(Long scheduleId);
     List<BusSchedule> searchBuses(BusSearchDTO busSearchDTO);
     
-//    BusSchedule getScheduleByScheduleId(Long scheduleId);
+
    
 }

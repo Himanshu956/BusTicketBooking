@@ -51,5 +51,5 @@ public class BusSearchResultDTO {
         this.fare = fare;
     }
     
-    // Add more getters and setters for additional fields if necessary
+
 }

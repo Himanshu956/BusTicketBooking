@@ -1,17 +1,14 @@
 package com.wipro.bus.service;
 
-import com.wipro.bus.dto.BusSearchDTO;
-import com.wipro.bus.entities.BusSchedule;
-import com.wipro.bus.entities.User;
-import com.wipro.bus.repository.BusScheduleRepository;
-import com.wipro.bus.service.BusScheduleService;
-
-import jakarta.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
+
+import com.wipro.bus.dto.BusSearchDTO;
+import com.wipro.bus.entities.BusSchedule;
+import com.wipro.bus.repository.BusScheduleRepository;
 
 @Service
 public class BusScheduleServiceImpl implements BusScheduleService {
@@ -40,10 +37,7 @@ public class BusScheduleServiceImpl implements BusScheduleService {
         return busScheduleRepository.findByOriginAndDestination(busSearchDTO.getOrigin(), busSearchDTO.getDestination());
     }
 
-//	@Override
-//	public BusSchedule getScheduleByScheduleId(Long scheduleId) {
-//		return busScheduleRepository.findByBusScheduleId(scheduleId);
-//	}
+
 
 
     

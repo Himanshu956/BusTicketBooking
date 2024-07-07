@@ -13,7 +13,7 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     List<Booking> findByUser_UserId(Long userId);
 
-    // Check for any booking that conflicts with the requested seats for the given route
+
     @Query("SELECT b FROM Booking b WHERE b.scheduleId = :scheduleId AND " +
            "EXISTS (SELECT seat FROM Booking b2 JOIN b2.seatNumbers seat " +
            "WHERE b2.id = b.id AND seat IN :seatNumbers)")

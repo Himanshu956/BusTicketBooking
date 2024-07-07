@@ -1,6 +1,6 @@
 package com.wipro.bus.entities;
 
-import java.util.Date;
+
 
 import jakarta.persistence.*;
 
@@ -16,7 +16,7 @@ public class BusSchedule {
     private int numOfSeats;
     private String origin;
     private String destination;
-//    private Date scheduleDate;
+
     private String timings;
     private double fare;
 
@@ -32,7 +32,7 @@ public class BusSchedule {
         this.numOfSeats = numOfSeats;
         this.origin = origin;
         this.destination = destination;
-//        this.scheduleDate = scheduleDate;
+
         this.timings = timings;
         
     }
@@ -94,13 +94,7 @@ public class BusSchedule {
         this.destination = destination;
     }
 
-//    public Date getScheduleDate() {
-//		return scheduleDate;
-//	}
-//
-//	public void setScheduleDate(Date scheduleDate) {
-//		this.scheduleDate = scheduleDate;
-//	}
+
 
 	public String getTimings() {
         return timings;

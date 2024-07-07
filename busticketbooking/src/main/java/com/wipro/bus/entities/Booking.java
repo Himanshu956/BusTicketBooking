@@ -13,8 +13,7 @@ public class Booking {
     private Long scheduleId;
     private String seatNumbers;
     private String bookingDate;
-//    private double totalFare;
-//    private String status;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id") 
@@ -66,22 +65,6 @@ public class Booking {
     public void setBookingDate(String bookingDate) {
         this.bookingDate = bookingDate;
     }
-
-//    public double getTotalFare() {
-//        return totalFare;
-//    }
-//
-//    public void setTotalFare(double totalFare) {
-//        this.totalFare = totalFare;
-//    }
-//
-//    public String getStatus() {
-//        return status;
-//    }
-//
-//    public void setStatus(String status) {
-//        this.status = status;
-//    }
 
     public User getUser() {
         return user;

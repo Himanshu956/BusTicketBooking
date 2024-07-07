@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.wipro.bus.entities.BusOperator;
-import com.wipro.bus.entities.BusSchedule;
-import com.wipro.bus.entities.User;
+
 
 import jakarta.transaction.Transactional;
 

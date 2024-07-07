@@ -56,17 +56,6 @@ public class AdministratorServiceImpl implements AdministratorService {
     	}
         return busOperatorRepository.save(busOperator);
     }
-//    @Override
-//    public User registerUser(User user) {
-//    	if (userRepository.findByEmail(user.getEmail()) != null) {
-//            throw new RuntimeException("User already exists with this email");
-//        }
-//        return userRepository.save(user);    }
-//    
-//    @Override
-//    public void deleteBusOperator(Long busOperatorId) {
-//        BusOperatorRepository.deleteById(busOperatorId);
-//    }
     
     @Transactional
 	@Override

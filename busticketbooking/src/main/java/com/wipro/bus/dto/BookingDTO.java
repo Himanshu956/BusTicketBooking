@@ -1,11 +1,11 @@
 
 package com.wipro.bus.dto;
 
-import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
 
 public class BookingDTO {
 
@@ -23,13 +23,6 @@ public class BookingDTO {
 	@NotBlank(message = "Booking date cannot be blank")
 	@Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "Booking date must be in the format YYYY-MM-DD")
 	private String bookingDate; // Consider using LocalDate if feasible
-
-//	@Min(value = 0, message = "Total fare must be positive")
-//	private double totalFare;
-//
-//	@NotBlank(message = "Status cannot be blank")
-//	@Size(max = 20, message = "Status cannot be longer than 20 characters") // Adjust size if needed
-//	private String status;
 
 	// Default constructor
 	public BookingDTO() {
@@ -77,19 +70,4 @@ public class BookingDTO {
 		this.bookingDate = bookingDate;
 	}
 
-//	public double getTotalFare() {
-//		return totalFare;
-//	}
-//
-//	public void setTotalFare(double totalFare) {
-//		this.totalFare = totalFare;
-//	}
-//
-//	public String getStatus() {
-//		return status;
-//	}
-//
-//	public void setStatus(String status) {
-//		this.status = status;
-//	}
 }
