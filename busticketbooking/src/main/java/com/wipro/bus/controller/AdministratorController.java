@@ -31,6 +31,7 @@ public class AdministratorController {
 	@Autowired
 	private BusOperatorService busOperatorService;
 
+	@CrossOrigin("http://localhost:4200/")
 	@PostMapping("/registerAdmin")
 	public ResponseEntity<Administrator> registerAdministrator(@Valid @RequestBody Administrator administrator) {
 		try {

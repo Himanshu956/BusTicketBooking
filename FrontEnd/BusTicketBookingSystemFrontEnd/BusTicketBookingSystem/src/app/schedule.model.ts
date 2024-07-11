@@ -1,7 +1,7 @@
 export interface BusSchedule {
     scheduleId?: number;
     busName: string;
-    busNumber: number;
+    busNumber: string;
     busType: string;
     numofSeats: number;
     origin: string;

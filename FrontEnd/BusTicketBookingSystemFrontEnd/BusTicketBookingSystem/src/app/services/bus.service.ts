@@ -35,10 +35,7 @@ export class BusScheduleService {
     const token = localStorage.getItem('authToken'); // Retrieve the token from localStorage
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // Set the Authorization header
 
-    return this.http.post<any>(`${this.baseUrl}/createBusSchedule`, busSchedule, { headers })
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http.post<any>(`${this.baseUrl}/busOperator/createBusSchedule`, busSchedule, { headers })
   }
 
   private handleError(error: HttpErrorResponse) {
